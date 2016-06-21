@@ -2,6 +2,8 @@ library(shiny)
 library(googleVis)
 
 
+## Hello Ismail
+
 source("Service/google_vis_chart.R")
 
 
