@@ -58,7 +58,6 @@ shinyServer(
         }
           })
    
-    
     output$Linechart<- renderGvis({
       chart_input()
       })
@@ -67,3 +66,5 @@ shinyServer(
 
 #setwd("E:/Project-first-shiny_app")
 #runApp(host="192.168.5.16",port=5050)
+
+#Helo

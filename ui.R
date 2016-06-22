@@ -1,6 +1,7 @@
 
 shinyUI(fluidPage(
   sidebarLayout(
+    
     sidebarPanel(
       
       radioButtons("data",label = h3("Choose the data"),
@@ -18,7 +19,15 @@ shinyUI(fluidPage(
   
       ),
     
-    mainPanel(htmlOutput("Linechart"))
+    mainPanel(
+      fluidRow(
+        column(10,
+          htmlOutput("Linechart")
+          
+        )
+        
+      )
+      )
   )
 )
 )
