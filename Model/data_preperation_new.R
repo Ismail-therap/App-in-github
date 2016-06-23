@@ -1,3 +1,7 @@
+source("Model/Merging_module.R")
+source("Model/Data_from_Database.R")
+
+
 
 ###Read the data
 get_data_frame <- function(file_name){
@@ -6,7 +10,8 @@ get_data_frame <- function(file_name){
     dat <- file_name
   }
   else{
-    dat<- read.csv(file_name)    #Getting the input file
+    dat <- read.csv(file_name)
+    dat <- dat[2:7] #Getting the input file
   }
   
   dat$Date <- as.Date(dat$Date,"%Y-%m-%d")
@@ -40,14 +45,16 @@ calculate_usage_count <- function(dat, inidate, period){
     }
   }
   
+  #return(susetted_data)
+  
   #Checking combined data or not combined
   
-  if(ncol(susetted_data) > 7) {
-    susetted_data <- aggregate(susetted_data[,3:7],by = list(susetted_data$Time),FUN = sum)
+  if(ncol(susetted_data) > 6) {
+    susetted_data <- aggregate(susetted_data[,2:6],by = list(susetted_data$Time),FUN = sum)
     }
   
   else{
-    susetted_data <- aggregate(susetted_data[,3:6],by = list(susetted_data$Time),FUN = sum)
+    susetted_data <- aggregate(susetted_data[,2:5],by = list(susetted_data$Time),FUN = sum)
   }
   #return(susetted_data)
   order_the_data_set_by_minutes(susetted_data)
@@ -77,8 +84,4 @@ order_the_data_set_by_minutes <- function(agdat){
   }
   
 }
-
-
-
-#hi
 

@@ -25,6 +25,8 @@ combining_tz <- function(shifted_merged="folder"){
 
 #Combining the shifted and non shifted data sets and creating R data frame object for both
 Eastern_tz <- combining_tz((multmerge("data/shifted")))
+
+head(Eastern_tz)
 local_tz <- combining_tz((multmerge("data/not shifted")))
 
 

@@ -1,28 +1,26 @@
 library(shiny)
 library(googleVis)
 source("Service/google_vis_chart.R")
-source("Model/Merging_module.R")
 
 
-ispdata <- "data/ispDataUsageShifted.csv"
-billdata <- "data/billDataUsageShifted.csv"
-mar <- "data/marUsageShifted.csv"
-att <- "data/attendanceUsageShifted.csv"
-ger <- "data/GerdataUsageShifted.csv"
-scMail <- "data/scMailBoxUsageShifted.csv"
-
-ispdataLocal <- "data/ispDataUsageNotShifted.csv"
-billdataLocal <- "data/billDataUsageNotShifted.csv"
-marLocal <- "data/marUsageNotShifted.csv"
-attLocal <- "data/attendanceUsageNotShifted.csv"
-gerLocal <- "data/GerdataUsageNotShifted.csv"
-scMailLocal <- "data/scMailBoxUsageNotShifted.csv"
+ispdata <- eastern_data_isp
+billdata <- eastern_data_bill
+mar <- eastern_data_mar
+att <- eastern_data_att
+ger <- eastern_data_ger
+scMail <- eastern_data_smail
 
 
-Eastern_tz <- Eastern_tz
-local_tz <- local_tz
+ispdataLocal <- local_data_isp
+billdataLocal <- local_data_bill
+marLocal <- local_data_mar
+attLocal <- local_data_att
+gerLocal <- local_data_ger
+scMailLocal <- local_data_smail
 
 
+Eastern_tz <- Combined_eastern
+local_tz <- Combined_Local
 
 
 shinyServer(
